@@ -1,0 +1,41 @@
+---
+const title = "Yukina";
+const subtitle = "Minimal, elegant and calm Astro blog template";
+---
+
+<section class="relative overflow-hidden pt-32 pb-24">
+  <!-- Background -->
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-b from-zinc-900 to-zinc-950"
+  >
+  </div>
+
+  <!-- Waves -->
+  <svg
+    class="absolute bottom-0 left-0 w-full"
+    viewBox="0 0 1440 200"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="rgb(9 9 11)"
+      d="M0,96L60,112C120,128,240,160,360,170.7C480,181,600,171,720,160C840,149,960,139,1080,128C1200,117,1320,107,1380,101.3L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+    ></path>
+  </svg>
+
+  <!-- Content -->
+  <div class="mx-auto max-w-3xl px-6 text-center">
+    <h1
+      class="text-5xl
+        font-bold
+        tracking-tight
+        text-zinc-100
+        sm:text-6xl"
+    >
+      {title}
+    </h1>
+
+    <p class="mt-6 text-lg text-zinc-400">
+      {subtitle}
+    </p>
+  </div>
+</section>
