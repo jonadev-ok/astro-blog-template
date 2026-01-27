@@ -1,16 +1,27 @@
 ---
+import HeroImage from "../../assets/hero-image.png"
 const title = "JD Blog - Astro Template";
-const subtitle = "Minimal, elegant and calm Astro blog template";
+const subtitle = "Hola, soy un tema de Astro para crear sitios web basados en contenido. Completamente personalizable, tambien puedes añadir nuevas entradas. Haz clic en el icono de GitHub a continuación para visitar mi repositorio.";
+const link = "/blog"
 ---
 
 <section
-  class="relative overflow-hidden pt-32 pb-24 max-w-full mx-auto"
+  class="flex justify-between items-center overflow-hidden pt-20 max-w-full"
 >
-  <h1 class="text-3xl text-center font-bold tracking-tight text-zinc-100 sm:text-4xl">
+<div class="flex flex-col w-150">
+  <h1 class="text-5xl text-start font-bold tracking-tight text-zinc-100 sm:text-4xl">
       {title}
     </h1>
 
-    <p class="mt-6 text-lg text-center text-zinc-400">
+    <p class="mt-6 text-lg text-start text-center text-zinc-400">
       {subtitle}
     </p>
+    <div class="flex flex-row mt-6">
+    <a href={link} class="bg-blue-500 mr-2 py-2 px-3 text-white w-fit rounded-lg">Visita nuestro blog</a>
+    <a href={link} class="bg-blue-500 ml-2 py-2 px-3 text-white w-fit rounded-lg">Visita mi repositorio</a>
+  </div>
+  </div>
+  <div class="flex flex-col">
+    <img src={HeroImage.src} alt="hola" class="w-60"/>
+  </div>
 </section>
