@@ -1,5 +1,6 @@
 ---
 import HeroImage from "../../assets/hero-image.png"
+import GitHubIcon from "../icons/GitHubIcon.astro"
 const title = "JD Blog - Astro Template";
 const subtitle = "Hola, soy un tema de Astro para crear sitios web basados en contenido. Completamente personalizable, tambien puedes añadir nuevas entradas. Haz clic en el icono de GitHub a continuación para visitar mi repositorio.";
 const link = "/blog"
@@ -17,8 +18,8 @@ const link = "/blog"
       {subtitle}
     </p>
     <div class="flex flex-row mt-6">
-    <a href={link} class="bg-blue-500 mr-2 py-2 px-3 text-white w-fit rounded-lg">Visita nuestro blog</a>
-    <a href={link} class="bg-blue-500 ml-2 py-2 px-3 text-white w-fit rounded-lg">Visita mi repositorio</a>
+    <a href={link} class="flex flex-row bg-blue-500 mr-2 py-2 px-3 text-white w-fit rounded-lg">Visita nuestro blog 📄</a>
+    <a href={link} class="flex flex-row bg-blue-500 ml-2 py-2 px-3 text-white w-fit rounded-lg">Visita mi repositorio <GitHubIcon class="ml-2 w-5"/></a>
   </div>
   </div>
   <div class="flex flex-col">
