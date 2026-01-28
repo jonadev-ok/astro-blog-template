@@ -1,18 +1,18 @@
 ---
+import TitleContainer from "../ui/TitleContainer.astro";
 import HeroImage from "../../assets/hero-image.png"
 import Button from "../ui/Button.astro";
-const title = "JD Blog - Astro Template";
-const subtitle = "Hola, soy un tema de Astro para crear sitios web basados en contenido. Completamente personalizable, tambien puedes añadir nuevas entradas. Haz clic en el icono de GitHub a continuación para visitar mi repositorio.";
-const link = "/blog"
+const title = "JD Blog - Astro Theme";
+const subtitle = "Hola, soy un tema de Astro para crear sitios web basados en contenido. Completamente personalizable, tambien puedes añadir nuevas entradas.";
 ---
 
 <section
   class="flex justify-between items-center overflow-hidden pt-20 max-w-full"
 >
 <div class="flex flex-col w-150">
-  <h1 class="text-5xl text-start font-bold tracking-tight text-zinc-100 sm:text-4xl">
+  <TitleContainer>
       {title}
-    </h1>
+  </TitleContainer>
 
     <p class="mt-6 text-lg text-start text-center text-zinc-400">
       {subtitle}
