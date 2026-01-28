@@ -1,33 +1,37 @@
 ---
 import TitleContainer from "../ui/TitleContainer.astro";
 import ParagraphContainer from "../ui/ParagraphContainer.astro";
-import HeroImage from "../../assets/hero-image.png"
+import { Image } from "astro:assets";
+import HeroImage from "../../assets/hero-image.png";
 import Button from "../ui/Button.astro";
 const title = "JD Blog - Astro Theme";
-const subtitle = "Hola, soy un tema de Astro para crear sitios web basados en contenido. Completamente personalizable, tambien puedes añadir nuevas entradas.";
+const subtitle =
+  "Hola, soy un tema de Astro para crear sitios web basados en contenido. Completamente personalizable, tambien puedes añadir nuevas entradas.";
 ---
 
 <section
   class="flex justify-between items-center overflow-hidden pt-20 max-w-full"
 >
-<div class="flex flex-col w-150">
-  <TitleContainer>
+  <div class="flex flex-col w-150">
+    <TitleContainer>
       {title}
-  </TitleContainer>
+    </TitleContainer>
 
     <ParagraphContainer>
       {subtitle}
     </ParagraphContainer>
     <div class="flex flex-row mt-6">
-    <Button
-    href="/blog"
-    label="Ver Blog"/>
-    <Button
-    href="/about"
-    label="Sobre Mi"/>
-  </div>
+      <Button href="/blog" label="Ver Blog" />
+      <Button href="/about" label="Sobre Mi" />
+    </div>
   </div>
   <div class="flex flex-col">
-    <img src={HeroImage.src} alt="hola" class="w-60"/>
+    <Image
+      src={HeroImage}
+      decoding="async"
+      loading="lazy"
+      alt="imagen ilustrada"
+      class="w-60"
+    />
   </div>
 </section>
