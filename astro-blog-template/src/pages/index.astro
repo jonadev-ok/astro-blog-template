@@ -1,8 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from "../components/sections/Hero.astro";
+import PostCard from "../components/blog/PostCard.astro";
+import { getCollection } from "astro:content";
+const posts = await getCollection("posts", ({ data }) => !data.draft);
 ---
 
 <Layout>
 	<Hero />
+	<!-- <section class="mx-auto max-w-full px-6 py-5 grid gap-6 sm:grid-cols-2"> -->
+  {posts.map(post => (
+    <PostCard
+      title={post.data.title}
+      description={post.data.description}
+      date={post.data.date}
+      slug={post.slug}
+      tags={post.data.tags}
+    />
+  ))}
+<!-- </section> -->
 </Layout>
