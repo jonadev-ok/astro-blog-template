@@ -1,0 +1,29 @@
+---
+const { title, description, date } = Astro.props;
+import Layout from "./Layout.astro";
+---
+
+<Layout title={title} description={description}>
+  <article>
+    <!-- Header -->
+    <header class="mb-12">
+      <p class="text-sm text-muted-foreground mb-2">
+        {date}
+      </p>
+
+      <h1 class="text-4xl font-bold leading-tight mb-4">
+        {title}
+      </h1>
+
+      {
+        description && (
+          <p class="text-lg text-muted-foreground">{description}</p>
+        )
+      }
+    </header>
+    <!-- Content -->
+    <section class="mdx">
+      <slot />
+    </section>
+  </article>
+</Layout>
