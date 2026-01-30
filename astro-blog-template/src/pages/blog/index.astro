@@ -1,13 +1,16 @@
 ---
+import Layout from '../../layouts/Layout.astro';
 import { getCollection } from "astro:content";
 import PostCard from "../../components/blog/PostCard.astro";
 const posts = await getCollection("posts");
-
+const title = "Bienvenidos a nuestro blog."
+const description = "Bienvenidos a nuestro blog donde compartimos artículos sobre desarrollo web, Astro y más.";
 const sortedPosts = posts.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
 ---
 
+<Layout title={title} description={description}>
 <section class="mx-auto max-w-7xl px-4 py-16">
   <!-- Header -->
   <header class="mb-10 flex items-end justify-between">
@@ -19,6 +22,7 @@ const sortedPosts = posts.sort(
     </div>
   </header>
   <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-    {sortedPosts.map((post) => <PostCard {...post.data} />)}
+    {sortedPosts.map((post) => <PostCard slug={post.slug} {...post.data} />)}
   </div>
 </section>
+</Layout>
