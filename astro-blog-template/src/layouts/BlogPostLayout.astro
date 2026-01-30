@@ -1,15 +1,20 @@
 ---
-const { title, description, date } = Astro.props;
+const { title, description, date, readingTime } = Astro.props;
 import Layout from "./Layout.astro";
 ---
 
 <Layout title={title} description={description}>
-  <article>
+  <article class="prose prose-invert max-w-none md:px-0 py-12">
     <!-- Header -->
-    <header class="mb-12">
-      <p class="text-sm text-muted-foreground mb-2">
-        {date}
-      </p>
+    <header class="mb-6">
+      <div class="flex items-center gap-4 text-sm text-muted-foreground mb-3">
+        {date && <span class="text-white">{date}</span>}
+        {
+          readingTime && (
+            <span class="text-white">{readingTime} minuto{readingTime > 1 && "s"} de lectura</span>
+          )
+        }
+      </div>
 
       <h1 class="text-4xl font-bold leading-tight mb-4">
         {title}

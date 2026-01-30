@@ -24,6 +24,10 @@
     @apply leading-7;
   }
 
+  .mdx span {
+    @apply leading-7;
+  }
+
   /* Links */
   .mdx a {
     @apply font-medium underline underline-offset-4;

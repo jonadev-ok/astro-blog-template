@@ -1,6 +1,7 @@
 ---
 import "../../styles/mdx.css";
 import { getCollection } from "astro:content";
+import { readingTime } from "../../utils/readingTime.ts";
 import BlogPostLayout from "../../layouts/BlogPostLayout.astro";
 
 export async function getStaticPaths() {
@@ -14,12 +15,14 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const stats = readingTime(post.body);
 ---
 
 <BlogPostLayout
   title={post.data.title}
   description={post.data.description}
-  date={post.data.date}
+  date={post.data.date.toLocaleDateString("es-ES")}
+  readingTime={stats.minutes}
 >
   <Content />
 </BlogPostLayout>
