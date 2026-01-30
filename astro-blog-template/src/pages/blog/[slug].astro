@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 const stats = readingTime(post.body);
 ---
 
@@ -23,6 +23,7 @@ const stats = readingTime(post.body);
   description={post.data.description}
   date={post.data.date.toLocaleDateString("es-ES")}
   readingTime={stats.minutes}
+  headings={headings}
 >
   <Content />
 </BlogPostLayout>

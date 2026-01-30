@@ -85,3 +85,11 @@
     @apply p-3;
   }
 }
+
+@layer components {
+  .mdx h2,
+  .mdx h3 {
+    scroll-margin-top: 6rem;
+  }
+}
+

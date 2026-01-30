@@ -1,34 +1,93 @@
 ---
-const { title, description, date, readingTime } = Astro.props;
+const { title, description, date, readingTime, headings = [] } = Astro.props;
+const toc = headings.filter((h: any) => h.depth === 2 || h.depth === 3);
+
 import Layout from "./Layout.astro";
 ---
 
 <Layout title={title} description={description}>
-  <article class="prose prose-invert max-w-none md:px-0 py-12">
-    <!-- Header -->
-    <header class="mb-6">
-      <div class="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-        {date && <span class="text-white">{date}</span>}
-        {
-          readingTime && (
-            <span class="text-white">{readingTime} minuto{readingTime > 1 && "s"} de lectura</span>
-          )
-        }
-      </div>
+  <main class="container mx-auto py-12 max-w-6xl">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12">
+      <article class="prose prose-invert max-w-none md:px-0 py-12">
+        <!-- Header -->
+        <header class="mb-6">
+          <div
+            class="flex items-center gap-4 text-sm text-muted-foreground mb-3"
+          >
+            {date && <span class="text-white">{date}</span>}
+            {
+              readingTime && (
+                <span class="text-white">
+                  {readingTime} minuto{readingTime > 1 && "s"} de lectura
+                </span>
+              )
+            }
+          </div>
 
-      <h1 class="text-4xl font-bold leading-tight mb-4">
-        {title}
-      </h1>
+          <h1 class="text-4xl font-bold leading-tight mb-4">
+            {title}
+          </h1>
 
+          {
+            description && (
+              <p class="text-lg text-muted-foreground">{description}</p>
+            )
+          }
+        </header>
+        <!-- Content -->
+        <section class="mdx">
+          <slot />
+        </section>
+      </article>
+      <!-- TOC -->
       {
-        description && (
-          <p class="text-lg text-muted-foreground">{description}</p>
+        toc.length > 0 && (
+          <aside class="hidden lg:block">
+            <nav class="sticky top-24">
+              <p class="text-sm font-semibold mb-4">En este artículo</p>
+
+              <ul class="space-y-2 text-sm">
+                {toc.map((heading: any) => (
+                  <li class={heading.depth === 3 ? "ml-4" : ""}>
+                    <a
+                      href={`#${heading.slug}`}
+                      class="text-muted-foreground hover:text-foreground transition"
+                    >
+                      {heading.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
         )
       }
-    </header>
-    <!-- Content -->
-    <section class="mdx">
-      <slot />
-    </section>
-  </article>
+    </div>
+  </main>
+  <script>
+    const headings = document.querySelectorAll("article h2, article h3");
+    const tocLinks = document.querySelectorAll(".toc a");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const id = entry.target.id;
+          tocLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === `#${id}`,
+            );
+          });
+        });
+      },
+      {
+        rootMargin: "0px 0px -60% 0px",
+        threshold: 0.1,
+      },
+    );
+
+    headings.forEach((heading) => observer.observe(heading));
+  </script>
 </Layout>
