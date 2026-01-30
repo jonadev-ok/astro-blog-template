@@ -1,4 +1,5 @@
 ---
+// import '../styles/mdx.css';
 const { title, description, date, readingTime, headings = [] } = Astro.props;
 const toc = headings.filter((h: any) => h.depth === 2 || h.depth === 3);
 
@@ -42,16 +43,18 @@ import Layout from "./Layout.astro";
       <!-- TOC -->
       {
         toc.length > 0 && (
-          <aside class="hidden lg:block">
+          <aside class="toc hidden xl:block">
             <nav class="sticky top-24">
-              <p class="text-sm font-semibold mb-4">En este artículo</p>
+              <p class="toc-title">
+                En este artículo vas a encontrar:
+              </p>
 
               <ul class="space-y-2 text-sm">
                 {toc.map((heading: any) => (
-                  <li class={heading.depth === 3 ? "ml-4" : ""}>
+                  <li class={heading.depth === 3 ? "depth-3" : "depth-2"}>
                     <a
                       href={`#${heading.slug}`}
-                      class="text-muted-foreground hover:text-foreground transition"
+                      class="text-muted-foreground text-slate-300 hover:text-foreground transition"
                     >
                       {heading.text}
                     </a>
