@@ -2,11 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/sections/Hero.astro";
 import RecentPosts from "../components/sections/RecentPosts.astro";
+import HeroImage from "../assets/hero-image.png";
 ---
 
 <Layout>
-  <main role=main class="max-w-6xl mx-auto">
-    <Hero />
+  <main role="main" class="max-w-6xl mx-auto">
+    <Hero
+      image={HeroImage}
+      title="JD Blog - Astro Theme"
+      subtitle="Hola, soy un tema de Astro para crear sitios web basados en contenido. Completamente personalizable, tambien puedes añadir nuevas entradas."
+      primaryAction={{ href: "/blog", label: "Ver Blog" }}
+      secondaryAction={{ href: "/about", label: "Sobre Mi" }}
+    />
     <RecentPosts />
   </main>
 </Layout>
