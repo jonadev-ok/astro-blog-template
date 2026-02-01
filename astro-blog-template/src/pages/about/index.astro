@@ -7,7 +7,8 @@ import AboutImage from "../../assets/about-img.png";
 <Layout>
   <main role="main" class="max-w-6xl mx-auto">
     <Hero
-      image={AboutImage} className="w-60 rounded-2xl"
+      image={AboutImage}
+      className="w-60 rounded-2xl"
       title="Todo sobre JD - Blog"
       subtitle="Este sitio es un ejemplo de blog personal construido con Astro, pensado para compartir contenido técnico, documentar aprendizajes y publicar artículos de forma simple y performante."
       primaryAction={{
@@ -19,5 +20,101 @@ import AboutImage from "../../assets/about-img.png";
         label: "Ver documentación",
       }}
     />
+    <section class="max-w-4xl pt-10">
+      <h2 class="text-2xl font-semibold text-white">¿Qué es este proyecto?</h2>
+
+      <p class="mt-4 text-slate-400">
+        JD Blog es un template de blog personal construido con Astro, enfocado
+        en performance, simplicidad y control total del contenido. Está pensado
+        como una base sólida para desarrolladores que quieren escribir, publicar
+        y escalar sin fricción.
+      </p>
+    </section>
+    <section class="max-w-4xl pt-10">
+      <h2 class="text-2xl font-semibold text-white">Principios del template</h2>
+
+      <ul class="mt-8 space-y-4 text-slate-400">
+        <li>
+          <strong class="text-white">Performance primero:</strong>
+          HTML estático, cero JS innecesario y tiempos de carga mínimos.
+        </li>
+        <li>
+          <strong class="text-white">Contenido tipado:</strong>
+          Uso de Astro Content Collections para validar y escalar contenido.
+        </li>
+        <li>
+          <strong class="text-white">Diseño simple y extensible:</strong>
+          TailwindCSS, dark mode y componentes reutilizables.
+        </li>
+      </ul>
+    </section>
+    <section class="max-w-4xl py-15">
+      <header class="mb-10">
+        <h2 class="text-2xl font-semibold text-white">Preguntas frecuentes</h2>
+      </header>
+
+      <div class="space-y-4">
+        <details
+          class="group rounded-xl border border-slate-800 bg-slate-900 p-4"
+        >
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between"
+          >
+            <h3 class="text-lg font-medium text-white">
+              ¿Para quién está pensado este template?
+            </h3>
+            <span class="text-slate-400 transition group-open:rotate-180">
+              ▼
+            </span>
+          </summary>
+
+          <p class="mt-4 text-slate-400">
+            Está pensado para desarrolladores, creadores de contenido técnico y
+            equipos que quieran publicar artículos rápidos, performantes y con
+            control total del código.
+          </p>
+        </details>
+
+        <details
+          class="group rounded-xl border border-slate-800 bg-slate-900 p-4"
+        >
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between"
+          >
+            <h3 class="text-lg font-medium text-white">
+              ¿Usa Astro Content Collections?
+            </h3>
+            <span class="text-slate-400 transition group-open:rotate-180">
+              ▼
+            </span>
+          </summary>
+
+          <p class="mt-4 text-slate-400">
+            Sí. Todo el contenido se gestiona mediante Content Collections, lo
+            que garantiza tipado, validación y escalabilidad.
+          </p>
+        </details>
+
+        <details
+          class="group rounded-xl border border-slate-800 bg-slate-900 p-4"
+        >
+          <summary
+            class="flex cursor-pointer list-none items-center justify-between"
+          >
+            <h3 class="text-lg font-medium text-white">
+              ¿Está optimizado para SEO y performance?
+            </h3>
+            <span class="text-slate-400 transition group-open:rotate-180">
+              ▼
+            </span>
+          </summary>
+
+          <p class="mt-4 text-slate-400">
+            Absolutamente. El template prioriza HTML estático, carga progresiva
+            y buenas prácticas SEO desde el primer render.
+          </p>
+        </details>
+      </div>
+    </section>
   </main>
 </Layout>
