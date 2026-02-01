@@ -25,14 +25,14 @@ const sortedPosts = posts.sort(
             Astro y mas.
           </p>
         </div>
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {
-            sortedPosts.map((post) => (
-              <PostCard slug={post.slug} {...post.data} />
-            ))
-          }
-        </div>
       </header>
     </section>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        sortedPosts.map((post) => (
+          <PostCard slug={post.slug} {...post.data} />
+        ))
+      }
+    </div>
   </main>
 </Layout>
