@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/sections/Hero.astro";
+import BlogImage from "../../assets/blog-image.png"
 import { getCollection } from "astro:content";
 import PostCard from "../../components/blog/PostCard.astro";
 const posts = await getCollection("posts");
@@ -21,6 +22,7 @@ const sortedPosts = posts.sort(
 <Layout title={title} description={description}>
   <main role="main" class="max-w-6xl mx-auto">
     <Hero
+      image={BlogImage} className="w-60"
       title="Bienvenidos a nuestro blog."
       subtitle="Explora nuestros artículos más recientes sobre programación, desarrollo web, nuevas tecnologías y mucho más."
     />
