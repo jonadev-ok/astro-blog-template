@@ -27,46 +27,52 @@ const {
   imageAlt = "Hero image",
   primaryAction,
   secondaryAction,
-  className = ""
+  className = "",
 } = Astro.props;
 ---
 
-<section class="flex justify-between items-center overflow-hidden pt-20 max-w-full">
+<section
+  class="flex justify-between items-center overflow-hidden max-w-full py-10"
+>
   <div class="flex flex-col w-150">
     <TitleContainer>
       {title}
     </TitleContainer>
 
-    {subtitle && (
-      <ParagraphContainer>
-        {subtitle}
-      </ParagraphContainer>
-    )}
+    {subtitle && <ParagraphContainer>{subtitle}</ParagraphContainer>}
 
-    {(primaryAction || secondaryAction) && (
-      <div class="flex flex-row mt-6 gap-4">
-        {primaryAction && (
-          <Button href={primaryAction.href} label={primaryAction.label} target="_blank" />
-        )}
+    {
+      (primaryAction || secondaryAction) && (
+        <div class="flex flex-row mt-6 gap-4">
+          {primaryAction && (
+            <Button
+              href={primaryAction.href}
+              label={primaryAction.label}
+              target="_blank"
+            />
+          )}
 
-        {secondaryAction && (
-          <Button href={secondaryAction.href} label={secondaryAction.label} />
-        )}
-      </div>
-    )}
+          {secondaryAction && (
+            <Button href={secondaryAction.href} label={secondaryAction.label} />
+          )}
+        </div>
+      )
+    }
 
     <slot />
   </div>
 
-  {image && (
-    <div class="flex flex-col">
-      <Image
-        src={image}
-        decoding="async"
-        loading="lazy"
-        alt={imageAlt}
-        class={`${className}`}
-      />
-    </div>
-  )}
+  {
+    image && (
+      <div class="flex flex-col">
+        <Image
+          src={image}
+          decoding="async"
+          loading="lazy"
+          alt={imageAlt}
+          class={`${className}`}
+        />
+      </div>
+    )
+  }
 </section>
