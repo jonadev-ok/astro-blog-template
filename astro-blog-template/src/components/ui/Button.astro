@@ -2,16 +2,19 @@
 interface Props {
   href: string
   label: string
+  target?: string
 }
 
 const {
   href,
   label,
+  target
 } = Astro.props
 ---
 
 <a
   href={href}
+  target={target}
   class={`flex flex-row w-fit rounded-lg border px-5 py-2 mr-2 transition-colors duration-300 hover:bg-blue-500 hover:text-white border-blue-500 text-blue-500`}
 >
   {label}

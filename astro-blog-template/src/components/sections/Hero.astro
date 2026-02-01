@@ -17,6 +17,7 @@ interface Props {
     href: string;
     label: string;
   };
+  className?: string;
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   imageAlt = "Hero image",
   primaryAction,
   secondaryAction,
+  className = ""
 } = Astro.props;
 ---
 
@@ -44,7 +46,7 @@ const {
     {(primaryAction || secondaryAction) && (
       <div class="flex flex-row mt-6 gap-4">
         {primaryAction && (
-          <Button href={primaryAction.href} label={primaryAction.label} />
+          <Button href={primaryAction.href} label={primaryAction.label} target="_blank" />
         )}
 
         {secondaryAction && (
@@ -63,7 +65,7 @@ const {
         decoding="async"
         loading="lazy"
         alt={imageAlt}
-        class="w-60 rounded-2xl shadow-lg"
+        class={`${className}`}
       />
     </div>
   )}
