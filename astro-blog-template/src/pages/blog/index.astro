@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import  Hero from "../../components/sections/Hero.astro";
 import { getCollection } from "astro:content";
 import PostCard from "../../components/blog/PostCard.astro";
 const posts = await getCollection("posts");
@@ -13,26 +14,18 @@ const sortedPosts = posts.sort(
 
 <Layout title={title} description={description}>
   <main role="main" class="max-w-6xl mx-auto">
-    <section class="mx-auto max-w-7xl py-16">
-      <!-- Header -->
-      <header class="mb-10 flex items-end justify-between">
-        <div>
-          <h1 class="text-3xl font-bold text-white">
-            Bienvenidos a nuestro blog.
-          </h1>
-          <p class="mt-2 text-slate-400">
-            Aqui vas a encontrar todos nuestros articulos sobre desarrollo web,
-            Astro y mas.
-          </p>
-        </div>
-      </header>
+    <Hero
+      title="Bienvenidos a nuestro blog."
+      subtitle="Explora nuestros artículos más recientes sobre programación, desarrollo web, nuevas tecnologías y mucho más."
+    />
+    <section class="mx-auto max-w-7xl py-10">      
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          sortedPosts.map((post) => (
+            <PostCard slug={post.slug} {...post.data} />
+          ))
+        }
+      </div>
     </section>
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        sortedPosts.map((post) => (
-          <PostCard slug={post.slug} {...post.data} />
-        ))
-      }
-    </div>
   </main>
 </Layout>
