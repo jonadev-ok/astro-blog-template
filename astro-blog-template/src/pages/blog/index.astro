@@ -1,28 +1,29 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/sections/Hero.astro";
-import BlogImage from "../../assets/blog-image.webp"
-import { getCollection } from "astro:content";
+import BlogImage from "../../assets/blog-image.webp";
 import PostCard from "../../components/blog/PostCard.astro";
-const posts = await getCollection("posts");
-const title = "Bienvenidos a nuestro blog.";
 import SearchIsland from "../../components/islands/SearchIsland.tsx";
+import { getCollection } from "astro:content";
+const title = "Bienvenidos a nuestro blog.";
 const description =
   "Bienvenidos a nuestro blog donde compartimos artículos sobre desarrollo web, Astro y más.";
-const searchData = posts.map((p) => ({
+const posts = await getCollection("posts");
+const searchData = posts.map((p: any) => ({
   title: String(p.data.title ?? ""),
   description: String(p.data.description ?? ""),
   slug: String(p.slug ?? ""),
 }));
 const sortedPosts = posts.sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+  (a: any, b: any) => b.data.date.getTime() - a.data.date.getTime(),
 );
 ---
 
 <Layout title={title} description={description}>
   <main role="main" class="max-w-6xl mx-auto">
     <Hero
-      image={BlogImage} className="w-60"
+      image={BlogImage}
+      className="w-60"
       title="Bienvenidos a nuestro blog."
       subtitle="Explora nuestros artículos más recientes sobre programación, desarrollo web, nuevas tecnologías y mucho más."
     />
@@ -30,7 +31,7 @@ const sortedPosts = posts.sort(
     <section class="mx-auto max-w-7xl py-10">
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {
-          sortedPosts.map((post) => (
+          sortedPosts.map((post:any) => (
             <PostCard slug={post.slug} {...post.data} />
           ))
         }
