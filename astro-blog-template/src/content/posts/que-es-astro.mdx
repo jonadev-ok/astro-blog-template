@@ -1,0 +1,90 @@
+---
+title: "¿Qué es Astro y por qué usarlo?"
+description: "Una introducción clara a Astro, su filosofía y por qué es ideal para blogs y sitios de contenido."
+date: 2026-01-26
+tags: ["astro", "blog", "template"]
+---
+
+## Introducción
+
+Astro es un **framework moderno para construir sitios web rápidos**, enfocado en entregar HTML estático por defecto y enviar JavaScript solo cuando es realmente necesario.
+
+Está especialmente pensado para:
+- blogs
+- documentación
+- portfolios
+- sitios de contenido
+
+donde **performance, simplicidad y control** son clave.
+
+---
+
+## ¿Cuál es la filosofía de Astro?
+
+Astro parte de una idea simple:
+
+> **El mejor JavaScript es el que no se envía.**
+
+En lugar de construir toda la aplicación como una SPA, Astro:
+- renderiza contenido en build time
+- genera HTML estático
+- permite agregar interactividad de forma puntual
+
+Esto se conoce como el modelo **Islands Architecture**.
+
+---
+
+## Islands Architecture
+
+La arquitectura de islas significa que:
+
+- El sitio es HTML estático por defecto
+- Los componentes interactivos se cargan de forma aislada
+- Cada isla puede usar React, Preact, Vue, Svelte, etc.
+
+### Ejemplo práctico
+
+Un blog puede ser 100% estático y solo usar JavaScript para:
+- un buscador
+- un toggle de tema
+- un menú mobile
+
+Todo lo demás **no necesita JS**.
+
+---
+
+## ¿Por qué Astro es ideal para blogs?
+
+Astro brilla especialmente en proyectos de contenido:
+
+### Performance
+
+- HTML pre-renderizado
+- Cero JavaScript innecesario
+- Excelente Core Web Vitals
+
+### DX (Developer Experience)
+
+- Soporte nativo para MDX
+- Content Collections tipadas
+- Routing simple y explícito
+
+### Flexibilidad
+
+- Podés usar Tailwind, CSS, o ambos
+- Integrar frameworks solo cuando lo necesitás
+- Escalar sin refactors grandes
+
+---
+
+## Astro + MDX
+
+MDX permite escribir contenido en Markdown y usar componentes al mismo tiempo.
+
+Ejemplo:
+
+```mdx
+<Card>
+  <h3>Contenido reutilizable</h3>
+  <p>Esto es Markdown + componentes.</p>
+</Card>
