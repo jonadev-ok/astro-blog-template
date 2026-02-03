@@ -12,7 +12,7 @@ const posts = await getCollection("posts", ({ data }) => data);
   </div>
   <ContainerCards>
     {
-      posts.map((post) => (
+      posts.slice(0, 4).map((post) => (
         <PostCard
           title={post.data.title}
           description={post.data.description}
