@@ -1,0 +1,53 @@
+---
+title: "Cómo está estructurado este blog con Astro"
+description: "Un recorrido por la arquitectura del blog: layouts, content collections, MDX y componentes reutilizables."
+date: 2026-01-05
+tags: ["arquitectura", "blog"]
+---
+
+## Introducción
+
+Este blog está construido con Astro priorizando claridad y mantenibilidad.
+
+No hay magia ni abstracciones innecesarias: solo una estructura simple, predecible y fácil de extender.
+
+---
+
+## Layouts
+
+El proyecto utiliza un layout principal que encapsula:
+
+- header
+- footer
+- estilos globales
+- metadata SEO
+
+Cada página decide qué contenido renderizar dentro de ese layout.
+
+---
+
+## Content Collections
+
+Los artículos viven en una colección tipada que define:
+
+- título
+- descripción
+- fecha
+- tags
+- imagen de portada
+
+Esto evita errores y mejora la experiencia de desarrollo.
+
+---
+
+## Componentes
+
+Las cards, el hero y los layouts están desacoplados del contenido.  
+El MDX solo escribe texto, no lógica.
+
+---
+
+## Conclusión
+
+Una buena estructura no se nota cuando funciona, pero se sufre cuando no existe.  
+Astro facilita hacerlo bien desde el inicio.
