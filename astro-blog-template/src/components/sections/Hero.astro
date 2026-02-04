@@ -32,7 +32,8 @@ const {
 ---
 
 <section
-  class="flex justify-between items-center overflow-hidden max-w-full py-10"
+  class="flex justify-between items-center overflow-hidden max-w-full 2xl:py-10 2xl:px-0
+  xl:py-10 xl:px-0 max-lg:py-10 max-lg:px-4 max-sm:py-10 max-sm:px-4"
 >
   <div class="flex flex-col w-150">
     <TitleContainer>
@@ -43,7 +44,7 @@ const {
 
     {
       (primaryAction || secondaryAction) && (
-        <div class="flex flex-row mt-6 gap-4">
+        <div class="flex flex-row mt-6 gap-4 max-sm:justify-center">
           {primaryAction && (
             <Button
               href={primaryAction.href}
@@ -70,7 +71,7 @@ const {
           decoding="async"
           loading="lazy"
           alt={imageAlt}
-          class={`md:flex max-sm:hidden ${className}`}
+          class={`lg:flex max-md:flex max-sm:hidden ${className}`}
         />
       </div>
     )
