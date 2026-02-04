@@ -53,7 +53,7 @@ export default function SearchIsland({
             key={item.slug}
             class="w-full flex-col mb-2 pl-5 py-2 rounded-lg bg-slate-900/60 border border-slate-800 hover:border-blue-500/50 hover:bg-slate-900"
           >
-            <a href={`/question/${item.slug}`}>
+            <a href={`/blog/${item.slug}`}>
               <strong class="text-white">{item.title}</strong>
               <p class="text-slate-400">{item.description}</p>
             </a>
