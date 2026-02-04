@@ -3,6 +3,10 @@ const { headingLevel = "h1", className = "" } = Astro.props;
 const Tag = headingLevel;
 ---
 
-<Tag class={`text-start font-bold tracking-tight text-zinc-300 max-lg:text-4xl max-sm:text-2xl max-sm:text-center ${className}`}>
+<Tag class={`text-start font-bold tracking-tight text-zinc-300 
+max-2xl:text-4xl 
+max-lg:text-4xl 
+max-md:text-4xl 
+max-sm:text-2xl max-sm:text-center ${className}`}>
   <slot />
 </Tag>
