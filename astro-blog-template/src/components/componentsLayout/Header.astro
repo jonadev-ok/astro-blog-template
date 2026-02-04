@@ -8,24 +8,27 @@ const navItems = [
 
 <header class="sticky top-4 z-50 px-4">
   <nav
-    class="mx-auto my-0 max-w-6xl h-18
+    class="relative mx-auto max-w-6xl h-14
       grid grid-cols-[auto_1fr_auto] items-center
       rounded-xl
-      bg-zinc-800
-      px-5 py-2
+      bg-zinc-800/90
+      px-5 py-3
       backdrop-blur-sm
       shadow-[0_0_15px_rgba(255,255,255,0.5)] shadow-blue-300"
   >
+    <!-- Logo -->
     <a href="/" class="flex items-center gap-2 font-semibold text-zinc-100">
-      <h2 class="text-blue-600 font-semibold">JD - BLOG</h2>
+      <h2 class="text-blue-500 font-semibold">JD – BLOG</h2>
     </a>
+
+    <!-- Desktop nav -->
     <ul class="hidden md:flex justify-center gap-6 text-sm text-zinc-200">
       {
         navItems.map((item) => (
           <li>
             <a
               href={item.href}
-              class="text-base font-normal opacity-80 transition hover:opacity-100 "
+              class="text-base opacity-80 transition hover:opacity-100"
             >
               {item.label}
             </a>
@@ -33,16 +36,40 @@ const navItems = [
         ))
       }
     </ul>
-    <!-- <div class="flex justify-end">
-      <button
-        aria-label="Toggle theme"
-        class="text-zinc-200
-          opacity-80
-          transition
-          hover:opacity-100"
+
+    <!-- Mobile menu button -->
+    <details class="md:hidden justify-self-end group">
+      <summary
+        aria-label="Toggle navigation"
+        class="list-none cursor-pointer text-zinc-200 opacity-80 transition hover:opacity-100"
       >
-        ☀️
-      </button>
-    </div> -->
+        <!-- Hamburger -->
+        <span class="block w-6 h-0.5 bg-current mb-1"></span>
+        <span class="block w-6 h-0.5 bg-current mb-1"></span>
+        <span class="block w-6 h-0.5 bg-current"></span>
+      </summary>
+
+      <!-- Mobile menu -->
+      <ul
+        class="absolute left-0 right-0 top-full mt-3
+          rounded-xl bg-zinc-800
+          px-6 py-4
+          flex flex-col gap-4
+          text-zinc-200 shadow-lg"
+      >
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="block text-base opacity-80 transition hover:opacity-100"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </details>
   </nav>
 </header>
