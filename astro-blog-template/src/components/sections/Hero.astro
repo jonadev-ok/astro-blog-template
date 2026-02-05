@@ -12,10 +12,12 @@ interface Props {
   primaryAction?: {
     href: string;
     label: string;
+    target?: string;
   };
   secondaryAction?: {
     href: string;
     label: string;
+    target?: string;
   };
   className?: string;
 }
@@ -52,12 +54,12 @@ const {
             <Button
               href={primaryAction.href}
               label={primaryAction.label}
-              target="_blank"
+              target={primaryAction.target ?? ""}
             />
           )}
 
           {secondaryAction && (
-            <Button href={secondaryAction.href} label={secondaryAction.label} />
+            <Button href={secondaryAction.href} label={secondaryAction.label} target={secondaryAction.target ?? ""} />
           )}
         </div>
       )
