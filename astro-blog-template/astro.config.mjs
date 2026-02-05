@@ -16,9 +16,11 @@ export default defineConfig({
   },
 
   integrations: [preact(), mdx()],
+  output: 'static',
   adapter: vercel({
     webAnalytics: {
       enabled: true,
     },
+    imageService: true,
   }),
 });
