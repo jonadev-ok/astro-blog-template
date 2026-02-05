@@ -7,6 +7,8 @@ import preact from "@astrojs/preact";
 
 import mdx from "@astrojs/mdx";
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -14,4 +16,5 @@ export default defineConfig({
   },
 
   integrations: [preact(), mdx()],
+  adapter: vercel(),
 });
