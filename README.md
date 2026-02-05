@@ -9,3 +9,19 @@ Está orientado a desarrolladores que quieren:
 - evitar complejidad innecesaria
 
 ---
+
+## ✨ Características
+
+- ⚡ **Astro** con renderizado estático por defecto
+- 📝 **MDX** para contenido enriquecido
+- 🎨 **Tailwind CSS** para estilos
+- 🧩 Componentes reutilizables
+- 🗂️ **Content Collections** tipadas
+- 📚 Tabla de contenidos automática
+- ⏱️ Reading time por artículo
+- 🌙 Diseño oscuro por defecto
+- 📱 Layout responsive
+- 🔍 Preparado para buscador con Preact
+- 🚀 Excelente performance y SEO
+
+---
