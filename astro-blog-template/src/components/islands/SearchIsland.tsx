@@ -38,7 +38,7 @@ export default function SearchIsland({
   }, [query, fuse]);
 
   return (
-    <div class="w-full max-2xl:px-0 max-xl:px-0 max-lg:px-4 max-sm:px-4">
+    <div class="w-full max-2xl:px-0 max-xl:px-4 max-lg:px-4 max-sm:px-4">
       <input
         type="search"
         value={query}

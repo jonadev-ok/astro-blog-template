@@ -28,7 +28,7 @@ const sortedPosts = posts.sort(
       subtitle="Explora nuestros artículos más recientes sobre programación, desarrollo web, nuevas tecnologías y mucho más."
     />
     <SearchIsland client:load data={searchData} />
-    <section class="mx-auto max-w-7xl py-10">
+    <section class="mx-auto max-w-7xl py-10 pt-5 max-2xl:px-0 max-xl:px-4 max-md:px-4 max-lg:px-4 max-sm:px-4">
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {
           sortedPosts.map((post:any) => (
