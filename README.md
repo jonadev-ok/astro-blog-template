@@ -25,3 +25,15 @@ Está orientado a desarrolladores que quieren:
 - 🚀 Excelente performance y SEO
 
 ---
+
+## 🧱 Stack tecnológico
+
+- [Astro](https://astro.build/)
+- MDX
+- Tailwind CSS
+- Preact (para islas interactivas)
+- TypeScript
+
+El sitio utiliza **HTML-first** y JavaScript solo cuando es necesario.
+
+---
