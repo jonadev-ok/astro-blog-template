@@ -1,3 +1,3 @@
-# astro-blog-template
+# JD Blog — Astro Blog Template
 
-Un template de astro ideal para implementar en tu blog.
+JD Blog es un **template de blog moderno** construido con **Astro**, pensado para crear sitios de contenido rápidos, simples y fáciles de mantener.
