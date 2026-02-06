@@ -8,6 +8,7 @@
   
   ![Astro Badge](https://img.shields.io/badge/Astro-FF3E00?logo=astro&logoColor=fff&style=flat)
   ![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+  ![Preact Badge](https://img.shields.io/badge/Preact-880052?logo=preact&logoColor=fff&style=flat)
   ![GitHub stars](https://img.shields.io/github/stars/jonadev-ok/astro-blog-template)
   ![GitHub PRs](https://img.shields.io/github/issues-pr/jonadev-ok/astro-blog-template)
   ![GitHub forks](https://img.shields.io/github/forks/jonadev-ok/astro-blog-template)
