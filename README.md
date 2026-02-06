@@ -44,3 +44,6 @@ El sitio utiliza **HTML-first** y JavaScript solo cuando es necesario.
   ![GitHub issues](https://img.shields.io/github/issues/jonadev-ok/astro-blog-template)
   
 </div>
+
+> [!NOTE]
+> Si estas interesado/a en contribuir haz clic aqui para mas [información](https://github.com/jonadev-ok/astro-blog-template/blob/main/CONTRIBUTING.md) 
