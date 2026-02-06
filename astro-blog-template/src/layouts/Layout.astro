@@ -6,8 +6,10 @@ import Footer from "../components/componentsLayout/Footer.astro";
 const {
   title = "JD - Blog",
   description = "Un tema de blog sencillo y personalizable creado con Astro",
+  image = "/og-image.png",
   faviconSvg = "/favicon.svg",
   faviconIco = "/favicon.ico",
+  url = "https://astro-blog-template.vercel.app/",
 } = Astro.props;
 ---
 
@@ -21,6 +23,19 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={new URL(image, url).href} />
+    <meta property="og:site_name" content="JD Blog" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, url).href} />
   </head>
   <body>
     <Header />
