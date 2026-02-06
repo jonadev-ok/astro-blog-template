@@ -1,6 +1,6 @@
 # 💻Template de blog creado con Astro
 
-<img width="1920" height="1080" alt="screen-blog" src="https://github.com/user-attachments/assets/74f48aa1-1907-44c4-939d-aed766209003" />
+<img width="1920" height="1080" alt="screen_blog" src="https://github.com/user-attachments/assets/a35cf589-3b99-40e2-b25d-347f4657b0c5" />
 
 
 <!--
