@@ -45,10 +45,9 @@ The site uses **HTML-first** and JavaScript only when necessary necessary.
 </div>
 
 > [!NOTE]
-> Si estas interesado/a en contribuir haz clic aqui para mas [información](https://github.com/jonadev-ok/astro-blog-template/blob/main/CONTRIBUTING.md) 
+> If you are interested in contributing, click here for more [information](https://github.com/jonadev-ok/astro-blog-template/blob/main/CONTRIBUTING.md)
 
-
-## 🫂 Contribuidores
+## 🫂 Contributors
 
 <a href="https://github.com/jonadev-ok/astro-blog-template/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=jonadev-ok/astro-blog-template"/>
