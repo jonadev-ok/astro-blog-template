@@ -1,31 +1,30 @@
-# 💻Template de blog creado con Astro
+# 💻 Blog template created with Astro
 
 <details>
-  <summary>Haz clic para ver los detalles técnicos</summary>
-  
-  ### ✨ Características:
+<summary>Click to see technical details</summary>
 
-- ⚡ **Astro** con renderizado estático por defecto
-- 📝 **MDX** para contenido enriquecido
-- 🎨 **Tailwind CSS** para estilos
-- 🧩 Componentes reutilizables
-- 🗂️ **Content Collections** tipadas
-- 📚 Tabla de contenidos automática
-- ⏱️ Reading time por artículo
-- 📱 Layout responsive
-- 🔍 Preparado para buscador con Preact
-- 🚀 Excelente performance y SEO
+### ✨ Features:
 
+- ⚡ **Astro** with static rendering by default
+- 📝 **MDX** for rich content
+- 🎨 **Tailwind CSS** for styles
+- 🧩 Reusable components
+- 🗂️ Typed **Content Collections**
+- 📚 Automatic table of contents
+- ⏱️ Reading time per article
+- 📱 Responsive layout
+- 🔍 Search engine optimized with Preact
+- 🚀 Excellent performance and SEO
 
-### 🧱 Stack tecnológico:
+### 🧱 Technology stack:
 
 - Astro
 - MDX
 - Tailwind CSS
-- Preact + Fuse (para isla de search)
+- Preact + Fuse (for search island)
 - TypeScript
 
-El sitio utiliza **HTML-first** y JavaScript solo cuando es necesario.
+The site uses **HTML-first** and JavaScript only when necessary necessary.
 
 </details>
 
