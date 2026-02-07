@@ -1,0 +1,94 @@
+---
+title: "What is Astro and why use it?"
+
+description: "A clear introduction to Astro, its philosophy, and why it's ideal for blogs and content sites."
+
+date: 2026-01-26
+tags: ["astro", "blog", "template"]
+---
+
+## Introduction
+
+Astro is a **modern framework for building fast websites**, focused on delivering static HTML by default and sending JavaScript only when it's truly necessary.
+
+It's especially suited for:
+- blogs
+- documentation
+- portfolios
+- content sites
+
+where **performance, simplicity, and control** are key.
+
+--
+
+## What is Astro's philosophy?
+
+Astro is based on a simple idea:
+
+> **The best JavaScript is the one that isn't sent.**
+
+Instead of building the entire application as a Single-Page Application (SPA), Astro:
+- renders content at build time
+- generates static HTML
+- allows you to add interactivity as needed
+
+This is known as the **Islands Architecture** model.
+
+---
+
+## Islands Architecture
+
+Island architecture means that:
+
+- The site is static HTML by default
+- Interactive components are loaded in isolation
+- Each island can use React, Preact, Vue, Svelte, etc.
+
+### Practical Example
+
+A blog can be 100% static and only use JavaScript for:
+- a search bar
+- a theme toggle
+- a mobile menu
+
+Everything else **doesn't need JS**.
+
+---
+
+## Why is Astro ideal for blogs?
+
+
+Astro shines especially in content projects:
+
+### Performance
+
+- Pre-rendered HTML
+- Zero unnecessary JavaScript
+- Excellent Core Web Vitals
+
+### DX (Developer Experience)
+
+- Native MDX support
+- Typed Content Collections
+- Simple and explicit routing
+
+### Flexibility
+
+- You can use Tailwind, CSS, or both
+- Integrate frameworks only when you need to
+- Scale without major refactoring
+
+---
+
+## Astro + MDX
+
+MDX allows you to write content in Markdown and use components simultaneously.
+
+Example:
+
+```mdx
+<Card>
+<h3>Reusable Content</h3>
+
+<p>This is Markdown + components.</p>
+</Card>
