@@ -14,7 +14,7 @@ interface Props {
 
 export default function SearchIsland({
   data,
-  placeholder = "Buscar articulos…"
+  placeholder = "Search articles…"
 }: Props) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchItem[]>([]);
