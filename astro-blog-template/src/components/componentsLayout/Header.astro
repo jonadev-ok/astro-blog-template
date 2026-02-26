@@ -1,4 +1,11 @@
 ---
+import SocialMenu from "./SocialMenu.astro";
+interface Props {
+  title?: string;
+  nav?: { label: string; href: string }[];
+  sticky?: boolean;
+}
+const { title = "JD BLOG", nav = [], sticky = true } = Astro.props;
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Blog", href: "/blog" },
@@ -6,33 +13,30 @@ const navItems = [
 ];
 ---
 
-<header class="sticky top-4 z-50 px-4">
+<header class="sticky top-0 z-50 px-4">
   <nav
     class="relative mx-auto max-w-6xl h-14
       grid grid-cols-[auto_1fr_auto] items-center
-      rounded-xl
-      bg-zinc-800/90
+      rounded-b-xl
+      bg-black-800/50
       px-5 py-3
-      backdrop-blur-sm
-      shadow-[0_0_15px_rgba(255,255,255,0.5)] shadow-blue-300"
+      backdrop-blur-sm"
   >
     <!-- Logo -->
     <a href="/" class="flex items-center gap-2 font-semibold text-zinc-100">
-      <h2 class="text-blue-500 font-semibold">JD – BLOG</h2>
+      <h2 class="text-xl text-blue-500 font-semibold">{title}</h2>
     </a>
 
     <!-- Desktop nav -->
     <ul class="hidden md:flex justify-center gap-6 text-sm text-zinc-200">
       {
-        navItems.map((item:any) => (
-          <li>
-            <a
-              href={item.href}
-              class="text-base opacity-80 transition hover:opacity-100"
-            >
-              {item.label}
-            </a>
-          </li>
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="flex items-center text-lg text-white py-1 px-2 transition-colors"
+          >
+            <span class="ml-1">{item.label}</span>
+          </a>
         ))
       }
     </ul>
@@ -58,7 +62,7 @@ const navItems = [
           text-zinc-200 shadow-lg"
       >
         {
-          navItems.map((item) => (
+          nav.map((item) => (
             <li>
               <a
                 href={item.href}
@@ -71,5 +75,6 @@ const navItems = [
         }
       </ul>
     </details>
+    <SocialMenu class="hidden md:flex" />
   </nav>
 </header>

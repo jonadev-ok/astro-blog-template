@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/componentsLayout/Header.astro";
 import Footer from "../components/componentsLayout/Footer.astro";
+import { navItems } from "../config/navigation.ts"
 
 const {
   title = "JD - Blog",
@@ -38,7 +39,7 @@ const {
     <meta name="twitter:image" content={new URL(image, url).href} />
   </head>
   <body>
-    <Header />
+    <Header nav={navItems} sticky={true}/>
     <slot />
     <Footer />
   </body>

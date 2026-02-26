@@ -1,0 +1,24 @@
+---
+import { socialItems } from "../../config/navigation";
+interface Props {
+  class?: string;
+  nav?: { label: string; href: string; icon?: any }[];
+  sticky?: boolean;
+}
+
+const { class: className = "", nav = socialItems, sticky = true } = Astro.props;
+---
+<nav class={`flex gap-4 ${className}`}>
+  {
+    nav.map((item) => {
+      return (
+        <a
+          href={item.href}
+          class="flex items-center text-white hover:text-gray-300 transition-colors"
+          target="_blank">
+          {item.icon && <item.icon class="mr-1" />}
+          <span class="sr-only">{item.label}</span>
+        </a>
+      );
+    })}
+</nav>
