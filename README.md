@@ -29,7 +29,7 @@ The site uses **HTML-first** and JavaScript only when necessary necessary.
 </details>
 
 <div align="center">
-  <img width="1920" height="1080" alt="screen_blog" src="https://github.com/user-attachments/assets/a35cf589-3b99-40e2-b25d-347f4657b0c5" />
+  <img width="1920" height="1080" alt="682shots_so" src="https://github.com/user-attachments/assets/7bd1b263-0f0d-4720-b5ff-e1263e28652f" />
   <p></p>
 </div>
 <div align="center">
